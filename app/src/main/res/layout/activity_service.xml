@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@android:color/holo_orange_light"
-    tools:context="es.ujaen.git.ssmm1718_g06_practica1.ServiceActivity">
+    tools:context="es.ujaen.git.ssmm1718_g06_practica2.ServiceActivity">
 
     <TextView
         android:id="@+id/textView4"
@@ -13,5 +13,6 @@
         android:layout_height="wrap_content"
         android:text="@string/activity_service"
         tools:layout_editor_absoluteX="163dp"
-        tools:layout_editor_absoluteY="16dp" />
+        tools:layout_editor_absoluteY="16dp"
+        tools:ignore="MissingConstraints" />
 </android.support.constraint.ConstraintLayout>

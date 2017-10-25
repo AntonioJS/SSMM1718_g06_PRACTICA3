@@ -1,4 +1,4 @@
-package es.ujaen.git.ssmm1718_g06_practica1;
+package es.ujaen.git.ssmm1718_g06_practica2;
 
 import org.junit.Test;
 

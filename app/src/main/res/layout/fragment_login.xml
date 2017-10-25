@@ -2,7 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    tools:context="es.ujaen.git.ssmm1718_g06_practica1.LoginFragment">
+    tools:context="es.ujaen.git.ssmm1718_g06_practica2.LoginFragment">
 
     <!-- TODO: Update blank fragment layout -->
 

@@ -1,4 +1,4 @@
-package es.ujaen.git.ssmm1718_g06_practica1;
+package es.ujaen.git.ssmm1718_g06_practica2;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("es.ujaen.git.ssmm1718_g06_practica1", appContext.getPackageName());
+        assertEquals("es.ujaen.git.ssmm1718_g06_practica2", appContext.getPackageName());
     }
 }

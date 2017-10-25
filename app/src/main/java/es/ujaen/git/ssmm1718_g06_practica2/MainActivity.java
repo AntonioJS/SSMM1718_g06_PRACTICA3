@@ -1,16 +1,9 @@
-package es.ujaen.git.ssmm1718_g06_practica1;
+package es.ujaen.git.ssmm1718_g06_practica2;
 
-import android.content.Intent;
-import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
-import android.widget.Toast;
-
-import org.w3c.dom.Text;
-
-import static java.security.AccessController.getContext;
 
 //Clase principal que inicia el launcher, donde usamos los datos volatiles y comprobamos el uso de salvar una instancia.
 

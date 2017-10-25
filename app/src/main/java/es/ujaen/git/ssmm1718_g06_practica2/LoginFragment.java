@@ -1,4 +1,4 @@
-package es.ujaen.git.ssmm1718_g06_practica1;
+package es.ujaen.git.ssmm1718_g06_practica2;
 
 
 import android.content.Intent;
@@ -11,8 +11,6 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
-
-import static android.R.attr.fragment;
 
 
 /**

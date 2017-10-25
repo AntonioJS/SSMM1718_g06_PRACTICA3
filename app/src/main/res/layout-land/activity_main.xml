@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="es.ujaen.git.ssmm1718_g06_practica1.MainActivity">
+    tools:context="es.ujaen.git.ssmm1718_g06_practica2.MainActivity">
 
     <ImageView
         android:id="@+id/imageView"
@@ -20,7 +20,7 @@
 
     <fragment
         android:id="@+id/fragment3"
-        android:name="es.ujaen.git.ssmm1718_g06_practica1.LoginFragment"
+        android:name="es.ujaen.git.ssmm1718_g06_practica2.LoginFragment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         tools:layout="@layout/fragment_login"
