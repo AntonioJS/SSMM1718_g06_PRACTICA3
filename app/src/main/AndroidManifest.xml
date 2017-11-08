@@ -3,12 +3,16 @@
     package="es.ujaen.git.ssmm1718_g06_practica2">
 
     <application
+
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <uses-permission android:name="android.permission.INTERNET" />
+        <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
         <activity android:name="es.ujaen.git.ssmm1718_g06_practica2.MainActivity">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

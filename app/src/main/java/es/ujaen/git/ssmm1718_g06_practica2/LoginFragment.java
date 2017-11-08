@@ -12,6 +12,14 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import java.io.BufferedReader;
+import java.io.DataOutputStream;
+import java.io.InputStreamReader;
+import java.net.InetAddress;
+import java.net.Socket;
+
+import static android.R.id.input;
+
 
 /**
  * A simple {@link Fragment} subclass.
@@ -131,6 +139,8 @@ public class LoginFragment extends Fragment {
             return "OK";
         }
 
+
+
         /**
          *
          * @param result OK si la operacion fue correcta y si no, otro valor.
@@ -158,7 +168,22 @@ public class LoginFragment extends Fragment {
 
 
         }
-
+        public void peticionHttp() {
+            try {
+                Socket client = new Socket(InetAddress.getLocalHost(), 80);
+                input = new BufferedReader(new InputStreamReader(client.getInputStream()));
+                output = new DataOutputStream(client.getOutputStream());
+                output.write("GET / HTTP/1.1\r\nhost:localhost\r\n\r\n".getBytes());
+                while ((line = input.readLine()) != null) {
+                    System.out.println(line);
+                }
+            } catch (UnknownHostException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
 
     }
 }
+
