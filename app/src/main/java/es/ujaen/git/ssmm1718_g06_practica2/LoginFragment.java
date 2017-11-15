@@ -168,21 +168,7 @@ public class LoginFragment extends Fragment {
 
 
         }
-        public void peticionHttp() {
-            try {
-                Socket client = new Socket(InetAddress.getLocalHost(), 80);
-                input = new BufferedReader(new InputStreamReader(client.getInputStream()));
-                output = new DataOutputStream(client.getOutputStream());
-                output.write("GET / HTTP/1.1\r\nhost:localhost\r\n\r\n".getBytes());
-                while ((line = input.readLine()) != null) {
-                    System.out.println(line);
-                }
-            } catch (UnknownHostException e) {
-                e.printStackTrace();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
+
 
     }
 }
