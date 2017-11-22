@@ -13,6 +13,7 @@ public class MainActivity extends AppCompatActivity {
     private String datosvolatiles = "Hola";
 
     private TextView volatil=null;
+    public static final String PREFS_NAME = "MyPrefsFile";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

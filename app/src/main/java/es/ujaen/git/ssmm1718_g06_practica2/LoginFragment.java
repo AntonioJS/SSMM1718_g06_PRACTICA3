@@ -2,6 +2,7 @@ package es.ujaen.git.ssmm1718_g06_practica2;
 
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -19,6 +20,7 @@ import java.net.InetAddress;
 import java.net.Socket;
 
 import static android.R.id.input;
+import static es.ujaen.git.ssmm1718_g06_practica2.MainActivity.PREFS_NAME;
 
 
 /**
@@ -32,6 +34,8 @@ import static android.R.id.input;
 *
 *
 * */
+
+
 public class LoginFragment extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -72,8 +76,14 @@ public class LoginFragment extends Fragment {
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getInt(ARG_PARAM2);
+
+
+
         }
     }
+
+
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -125,6 +135,8 @@ public class LoginFragment extends Fragment {
 
         return fragment;
     }
+
+
 
     //Clase donde comprobamos que la autenticación ha sido correcta, y que existen parametros.
     public class TareaAutentica extends AsyncTask<ConnectionUserData, Void, String> {
