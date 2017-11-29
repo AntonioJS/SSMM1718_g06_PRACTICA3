@@ -169,13 +169,15 @@ public class LoginFragment extends Fragment {
                 nueva.putExtra("param_pass", data.getPass());
                 nueva.putExtra("param_ip", data.getConnectionIP());
                 nueva.putExtra("param_port", data.getConnectionPort());
+                Autenticacion autentica= new Autenticacion();
                 startActivity(nueva);
+
+
             }else
             {
                 Toast.makeText(getContext(),"Error autenticando a"+data.getUser(),Toast.LENGTH_LONG).show();
 
             }
-
 
 
 
