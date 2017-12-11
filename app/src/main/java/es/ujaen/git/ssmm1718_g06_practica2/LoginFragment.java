@@ -18,9 +18,9 @@ import java.io.DataOutputStream;
 import java.io.InputStreamReader;
 import java.net.InetAddress;
 import java.net.Socket;
+import java.util.concurrent.ExecutionException;
 
 import static android.R.id.input;
-import static es.ujaen.git.ssmm1718_g06_practica2.MainActivity.PREFS_NAME;
 
 
 /**
@@ -34,8 +34,6 @@ import static es.ujaen.git.ssmm1718_g06_practica2.MainActivity.PREFS_NAME;
 *
 *
 * */
-
-
 public class LoginFragment extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -43,8 +41,13 @@ public class LoginFragment extends Fragment {
     private static final String ARG_PARAM2 = "param_port";
 
     // TODO: Rename and change types of parameters
-    private String mParam1;
-    private int mParam2;
+    private String mUser="";
+    private String mPass="";
+
+    //Inicialización del objeto de la clase Autentication
+    private PersonalData mAutentica = new PersonalData("","");
+    //Inicialización del objeto de la clase Sesion
+    private Sesion sesion = new Sesion("","");
 
 
     public LoginFragment() {
@@ -55,16 +58,16 @@ public class LoginFragment extends Fragment {
      * Use this factory method to create a new instance of
      * this fragment using the provided parameters.
      *
-     * @param ip Parameter 1.
-     * @param port Parameter 2.
+     * @param user Parameter 1.
+     * @param pass Parameter 2.
      * @return A new instance of fragment LoginFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static LoginFragment newInstance(String ip, int port) {
+    public static LoginFragment newInstance(String user, String pass) {
         LoginFragment fragment = new LoginFragment();
         Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, ip);
-        args.putInt(ARG_PARAM2, port);
+        args.putString(ARG_PARAM1, user);
+        args.putString(ARG_PARAM2, pass);
 
         fragment.setArguments(args);
         return fragment;
@@ -74,16 +77,10 @@ public class LoginFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getInt(ARG_PARAM2);
-
-
-
+            mUser = getArguments().getString(ARG_PARAM1);
+            mPass = getArguments().getString(ARG_PARAM2);
         }
     }
-
-
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -117,6 +114,35 @@ public class LoginFragment extends Fragment {
                 //Creamos el objeto con su constructor para rellenarlo.
 
                 ConnectionUserData data = new ConnectionUserData(s_user, s_pass, s_ip, port2);
+
+                Autenticacion aut = new Autenticacion();
+
+                try {
+                    //Almaceno los parámetros en un objeto de la clase autentication
+                    //final PersonalData a = new PersonalData(mAutentica.getUser(), mAutentica.getPass());
+                    //Método para iniciar la tarea asíncrona con el objeto de la clase Autentication, devolviendo objeto de la clase sesion
+                    sesion = aut.execute(data).get();
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                } catch (ExecutionException e) {
+                    e.printStackTrace();
+                }
+
+                //Llamo al método para establecer preferencias compartidas
+                SharedPreferences settings = getActivity().getSharedPreferences("sesion", 0);
+                SharedPreferences.Editor editor = settings.edit();
+                //Almaceno en el editor el identificador de sesion y la fecha en la que expira
+                editor.putString("SESION-ID", sesion.getmSessionId());
+                editor.putString("EXPIRES", sesion.getmExpires());
+                //Almaceno las preferencias compartidas
+                //editor.commit();
+                editor.apply();
+
+                //Muestra por consola
+                System.out.println("SESION-ID: " + sesion.getmSessionId());
+                System.out.println("EXPIRES: " + sesion.getmExpires());
+
+
                 Toast.makeText(getContext(), " Hola " + s_user + " " + s_pass + " " + s_ip + " " + s_port, Toast.LENGTH_LONG).show();
 
 
@@ -136,8 +162,6 @@ public class LoginFragment extends Fragment {
         return fragment;
     }
 
-
-
     //Clase donde comprobamos que la autenticación ha sido correcta, y que existen parametros.
     public class TareaAutentica extends AsyncTask<ConnectionUserData, Void, String> {
 
@@ -149,6 +173,8 @@ public class LoginFragment extends Fragment {
                 if (params.length >= 1)
                     data = params[0];
             return "OK";
+
+
         }
 
 
@@ -169,15 +195,13 @@ public class LoginFragment extends Fragment {
                 nueva.putExtra("param_pass", data.getPass());
                 nueva.putExtra("param_ip", data.getConnectionIP());
                 nueva.putExtra("param_port", data.getConnectionPort());
-                Autenticacion autentica= new Autenticacion();
                 startActivity(nueva);
-
-
             }else
             {
                 Toast.makeText(getContext(),"Error autenticando a"+data.getUser(),Toast.LENGTH_LONG).show();
 
             }
+
 
 
 

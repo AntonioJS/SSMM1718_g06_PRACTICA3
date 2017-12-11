@@ -54,4 +54,6 @@ public class PersonalData {
     public void setPass(String pass) {
         this.pass = pass;
     }
+
+
 }

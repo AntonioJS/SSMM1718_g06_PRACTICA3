@@ -13,7 +13,8 @@ import java.net.URL;
  * Created by usuario on 15/11/2017.
  */
 
-public class Autenticacion extends AsyncTask<PersonalData,Void,Sesion> {
+public class Autenticacion extends AsyncTask<ConnectionUserData,Void,Sesion> {
+
 
     @Override
     protected void onPreExecute() {
@@ -22,12 +23,12 @@ public class Autenticacion extends AsyncTask<PersonalData,Void,Sesion> {
     }
 
     @Override
-    protected Sesion doInBackground(PersonalData... params) {
+    protected Sesion doInBackground(ConnectionUserData... params) {
 
         Sesion sesion= new Sesion("","");
 
         try {
-            //Usuario y contraseña de Autentication
+            //Usuario y contraseña de ConnectionUserData
             String mUser = params[0].user;
             String mPass = params[0].pass;
 
@@ -37,7 +38,7 @@ public class Autenticacion extends AsyncTask<PersonalData,Void,Sesion> {
             //Inicio el socket
             Socket socket = new Socket(url.getHost(), 80);
 
-            //Inicio de las clases especializadas para leer y escribir
+            //Inicio de las clases leer y escribir
             OutputStreamWriter os = new OutputStreamWriter(socket.getOutputStream());
             InputStreamReader is = new InputStreamReader(socket.getInputStream());
 
@@ -59,25 +60,25 @@ public class Autenticacion extends AsyncTask<PersonalData,Void,Sesion> {
             String [] sessionid =  null; //Id de sesion
             String [] expires = null; //Fecha en la que expira la sesion
 
-            //Mientras que cada línea de entrada sea distinta de null
+            //Recibo respuesta HTTP...
             while ((inputline = in.readLine()) != null) {
-                //Separo las dos partes de la línea que estaban separadas por &
+                //Donde encuentre &... me quedo con la linea/cadena
                 linea = inputline.split("&");
             }
-            //Establezco el id de sesion quitando la cabecera, que no me interesa
+            //Quitar cabecera de id sesion
             sessionid = linea[0].split("SESION-ID=");
-            //Establezco la fecha quitando la cabecera, que no me interesa
+            //Quitar cabecera de fecha
             expires = linea[1].split("EXPIRES=");
 
-            //Los introduzco en el objeto de la clase sesion
+            //Set en la clase sesion
             sesion.setmSessionId(sessionid[1]);
             sesion.setmExpires(expires[1]);
 
-            //Cierro clases para escribir y leer
+            //Cierre clase leer y escribir
             os.close();
             in.close();
 
-            //Cierro socket
+            //Cierre sock
             socket.close();
 
         } catch (IOException e) {
