@@ -18,6 +18,11 @@ import java.io.DataOutputStream;
 import java.io.InputStreamReader;
 import java.net.InetAddress;
 import java.net.Socket;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.concurrent.ExecutionException;
 
 import static android.R.id.input;
@@ -113,10 +118,34 @@ public class LoginFragment extends Fragment {
                 }
                 //Creamos el objeto con su constructor para rellenarlo.
 
-                ConnectionUserData data = new ConnectionUserData(s_user, s_pass, s_ip, port2);
+                final ConnectionUserData data = new ConnectionUserData(s_user, s_pass, s_ip, port2);
+                boolean estadoAuten=false;
+                try {
+                    SimpleDateFormat formato = new SimpleDateFormat("yyyy-MM-dd-HH-mm-ss");
 
+                    Date fechaExp = formato.parse(sesion.getmExpires());
+
+
+                    Calendar c = Calendar.getInstance();
+                    //System.out.println("Current time => " + c.getTime());
+
+                    SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd-HH-mm-ss");
+                    String formateadaFechaActual = df.format(c.getTime());
+
+
+                    Date fechaActual = formato.parse(formateadaFechaActual);
+
+                    if(fechaExp.compareTo(fechaActual)<0){
+
+                        System.out.println("Fecha actual mayor que fechaEXPIRACION");
+                    estadoAuten=true;
+                    }
+
+                } catch (ParseException e) {
+                    e.printStackTrace();
+                }
+                //Implementar segun estado de la fecha --> si hacer tarea asincrona o no...
                 Autenticacion aut = new Autenticacion();
-
                 try {
                     //Almaceno los parámetros en un objeto de la clase autentication
                     //final PersonalData a = new PersonalData(mAutentica.getUser(), mAutentica.getPass());
@@ -138,12 +167,12 @@ public class LoginFragment extends Fragment {
                 //editor.commit();
                 editor.apply();
 
-                //Muestra por consola
+                //Comprobar por consola/Android Monitor sin depurar...(println-->Equivalente a un Log.i())
                 System.out.println("SESION-ID: " + sesion.getmSessionId());
                 System.out.println("EXPIRES: " + sesion.getmExpires());
 
 
-                Toast.makeText(getContext(), " Hola " + s_user + " " + s_pass + " " + s_ip + " " + s_port, Toast.LENGTH_LONG).show();
+                Toast.makeText(getContext(), getString(R.string.welcome_login)+" " + s_user + " " + s_pass + " " + s_ip + " " + s_port, Toast.LENGTH_LONG).show();
 
 
                 /*
@@ -154,6 +183,7 @@ public class LoginFragment extends Fragment {
                 nueva.putExtra("param port",data.getConnectionPort());
                 startActivity(nueva);
                 */
+
                 TareaAutentica tarea= new TareaAutentica();
                 tarea.execute(data);
             }
@@ -198,7 +228,7 @@ public class LoginFragment extends Fragment {
                 startActivity(nueva);
             }else
             {
-                Toast.makeText(getContext(),"Error autenticando a"+data.getUser(),Toast.LENGTH_LONG).show();
+                Toast.makeText(getContext(), getString(R.string.error_login) +" "+data.getUser(),Toast.LENGTH_LONG).show();
 
             }
 

@@ -11,4 +11,6 @@
     <string name="fragment_login_puerto">Puerto</string>
     <string name="fragment_login_button">Conectar</string>
     <string name="activity_service">Actividad 3</string>
+    <string name="welcome_login">Bienvenido</string>
+    <string name="error_login">Error autenticando a</string>
 </resources>

@@ -29,10 +29,10 @@ public class ServiceActivity extends AppCompatActivity {
         String ip=getIntent().getStringExtra(PARAM_IP);
         short port=getIntent().getShortExtra(PARAM_PORT,(short)6000);
 
-        Toast.makeText(this,"Bienvenido "+user,Toast.LENGTH_SHORT).show();
+        Toast.makeText(this,getString(R.string.welcome_login)+" "+user,Toast.LENGTH_SHORT).show();
 
-        TextView title= (TextView) findViewById(R.id.textView4);
-        title.setText("Hola "+user+"");
+        TextView title= (TextView) findViewById(R.id.txPerfil);
+        title.setText(getString(R.string.welcome_login)+" "+user);
 
 
 
