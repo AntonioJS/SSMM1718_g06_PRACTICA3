@@ -157,19 +157,9 @@ public class LoginFragment extends Fragment {
                     e.printStackTrace();
                 }
 
-                //Llamo al método para establecer preferencias compartidas
-                SharedPreferences settings = getActivity().getSharedPreferences("sesion", 0);
-                SharedPreferences.Editor editor = settings.edit();
-                //Almaceno en el editor el identificador de sesion y la fecha en la que expira
-                editor.putString("SESION-ID", sesion.getmSessionId());
-                editor.putString("EXPIRES", sesion.getmExpires());
-                //Almaceno las preferencias compartidas
-                //editor.commit();
-                editor.apply();
 
-                //Comprobar por consola/Android Monitor sin depurar...(println-->Equivalente a un Log.i())
-                System.out.println("SESION-ID: " + sesion.getmSessionId());
-                System.out.println("EXPIRES: " + sesion.getmExpires());
+
+
 
 
                 Toast.makeText(getContext(), getString(R.string.welcome_login)+" " + s_user + " " + s_pass + " " + s_ip + " " + s_port, Toast.LENGTH_LONG).show();
@@ -225,6 +215,20 @@ public class LoginFragment extends Fragment {
                 nueva.putExtra("param_pass", data.getPass());
                 nueva.putExtra("param_ip", data.getConnectionIP());
                 nueva.putExtra("param_port", data.getConnectionPort());
+                //Llamo al método para establecer preferencias compartidas
+                SharedPreferences settings = getActivity().getSharedPreferences("sesion", 0);
+                SharedPreferences.Editor editor = settings.edit();
+                //Almaceno en el editor el identificador de sesion y la fecha en la que expira
+                editor.putString("SESION-ID", sesion.getmSessionId());
+                editor.putString("EXPIRES", sesion.getmExpires());
+                //Almaceno las preferencias compartidas
+                //editor.commit();
+                editor.apply();
+
+                //Comprobar por consola/Android Monitor sin depurar...(println-->Equivalente a un Log.i())
+                System.out.println("SESION-ID: " + sesion.getmSessionId());
+                System.out.println("EXPIRES: " + sesion.getmExpires());
+
                 startActivity(nueva);
             }else
             {
