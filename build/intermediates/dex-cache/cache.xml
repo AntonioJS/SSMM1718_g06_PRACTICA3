@@ -3,21 +3,129 @@
 
     <item
         is-multidex="true"
-        jar="C:\Users\Salvador\AndroidStudioProjects\SSMM1718_g06_PRACTICA2\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jar="C:\Users\usuario\AppData\Local\Android\sdk\extras\m2repository\com\android\support\constraint\constraint-layout-solver\1.0.2\constraint-layout-solver-1.0.2.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.0"
-        sha1="77aea7238dc283d36b78f7b908594a532e0c19d6">
-        <dex dex="C:\Users\Salvador\AndroidStudioProjects\SSMM1718_g06_PRACTICA2\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_c289a53ab331b4274c7f4a637a46ba1f9504558b\classes.dex" />
+        sha1="b9cd8fc6bd15cb915735d34535db30ece0c44603">
+        <dex dex="C:\Users\usuario\AndroidStudioProjects\SSMM1718_g06_PRACTICA2\app\build\intermediates\transforms\dex\debug\folders\1000\10\constraint-layout-solver-1.0.2_ab984a11ee3f675d54c0fa423d052acc6b45f89f\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\Salvador\AndroidStudioProjects\SSMM1718_g06_PRACTICA2\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jar="C:\Users\usuario\.android\build-cache\a86ec8de0af8d6f6f1535f79d0c7fc40f684516c\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="150252b33b00274cc868578ade018fda0d43a3eb">
+        <dex dex="C:\Users\usuario\AndroidStudioProjects\SSMM1718_g06_PRACTICA2\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_c37aef7a91d0d123fdf3e1669fd696dfddd97ce8\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\usuario\.android\build-cache\00b7c65b50a18510c166221958d3b6c672a504b9\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="C:\Users\usuario\AndroidStudioProjects\SSMM1718_g06_PRACTICA2\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_2f487dc9660de1a8a2bea3b7dd77263d40904faa\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\usuario\AndroidStudioProjects\SSMM1718_g06_PRACTICA2\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.0"
         sha1="3be78ebc2706b2e1fe2f12d5726887a92d6c183b">
-        <dex dex="C:\Users\Salvador\AndroidStudioProjects\SSMM1718_g06_PRACTICA2\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_7ca17fbfb4d18f5e732657cf2f11034ea49b1a90\classes.dex" />
+        <dex dex="C:\Users\usuario\AndroidStudioProjects\SSMM1718_g06_PRACTICA2\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_a3a4091e74747714b830b392f4588a273c7e10f8\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\usuario\.android\build-cache\a12f4590fafec1a56b5ab4b0f8215561f5efff64\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="44ee06abb66da30f5855e6bf54574e64cdcd982a">
+        <dex dex="C:\Users\usuario\AndroidStudioProjects\SSMM1718_g06_PRACTICA2\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_4fb330c137c0dd3e1412da1c1b984a1d26b32060\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\usuario\.android\build-cache\fac7a0054cb42903cb1120b793d971a425a423b9\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="47635644d0d5c103c1dd8360549eb9ba3225c7d3">
+        <dex dex="C:\Users\usuario\AndroidStudioProjects\SSMM1718_g06_PRACTICA2\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_3e867dc427d5561c4b530911b8fe6eb0f76b2582\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\usuario\.android\build-cache\2d396c822ed77a6535a31f02407f3ec4403025a8\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="45f697922e6f072daa12f8a2995dc77ab03c11da">
+        <dex dex="C:\Users\usuario\AndroidStudioProjects\SSMM1718_g06_PRACTICA2\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_b4954f7b725e02d0f58478b38d2d629f4b10a045\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\usuario\AndroidStudioProjects\SSMM1718_g06_PRACTICA2\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="d54b4b847ec3d5c97a5f0ee8db1b1388ce697bdf">
+        <dex dex="C:\Users\usuario\AndroidStudioProjects\SSMM1718_g06_PRACTICA2\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_41fbd88cf0016e0b8b31eea689b9b15288edf266\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\usuario\.android\build-cache\1eafdc116fbe9d87d58acdc0677c54a4d3c5e85f\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="6ef31f1555bb4cc513ec8d52711365a8b89f3600">
+        <dex dex="C:\Users\usuario\AndroidStudioProjects\SSMM1718_g06_PRACTICA2\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_883e0e8e3bd81d7c36d83559267083a6b8a0db7c\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\usuario\.android\build-cache\fa158047f1f3e36eca9711d136f0f4c3772db25b\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="4a26a1154d053ab11aaf4c3967c42a4d66390991">
+        <dex dex="C:\Users\usuario\AndroidStudioProjects\SSMM1718_g06_PRACTICA2\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_655b8eb0d2d3f70f7dd150e487f3c34e1341ae24\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\usuario\.android\build-cache\eb69c57d2f2d460ae582fbba54be3c57400e98b4\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="efb8cb62d47d157c29d1521daac7eefd4cb881ee">
+        <dex dex="C:\Users\usuario\AndroidStudioProjects\SSMM1718_g06_PRACTICA2\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_748ce1497ce7bff8a35e654079443f69011762bb\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\usuario\.android\build-cache\df44d51d6eae283d2884b36e4435fc611a981b62\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="052f5f840f21174a3ecf6544130194e2652cbb73">
+        <dex dex="C:\Users\usuario\AndroidStudioProjects\SSMM1718_g06_PRACTICA2\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_c101a9b08ac6c5100025dba49e439d22acea4448\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\usuario\.android\build-cache\ea840b854fd00bd99a8275c698da52a98ec336e2\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="da27a32db6af8954ee8061537c7d476fcb1df46f">
+        <dex dex="C:\Users\usuario\AndroidStudioProjects\SSMM1718_g06_PRACTICA2\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_22d28109828edc35c05cefb1bcdf92ec36348779\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\usuario\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\25.3.1\support-annotations-25.3.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="bf8841d29fa39e077730e7a91222c2ce269fa7c9">
+        <dex dex="C:\Users\usuario\AndroidStudioProjects\SSMM1718_g06_PRACTICA2\app\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-25.3.1_9d6281e09ef1b997b9a95d58b58370165ca0d8a6\classes.dex" />
     </item>
 
 </items>

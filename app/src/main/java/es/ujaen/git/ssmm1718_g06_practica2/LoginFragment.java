@@ -1,6 +1,7 @@
 package es.ujaen.git.ssmm1718_g06_practica2;
 
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
@@ -44,6 +45,7 @@ public class LoginFragment extends Fragment {
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param_ip";
     private static final String ARG_PARAM2 = "param_port";
+    ProgressDialog progressDialog;
 
     // TODO: Rename and change types of parameters
     private String mUser="";
@@ -102,6 +104,26 @@ public class LoginFragment extends Fragment {
             @Override
             public void onClick(View v) {
 
+                progressDialog = new ProgressDialog(getContext());
+                progressDialog.setMessage("Cargando..."); // Setting Message
+                progressDialog.setTitle("Esperando termine respuesta"); // Setting Title
+                progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER); // Progress Dialog Style Spinner
+                progressDialog.show(); // Display Progress Dialog
+                progressDialog.setCancelable(false);
+
+                new Thread(new Runnable() {
+                    public void run() {
+                        try {
+                            Thread.sleep(10000);
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+                        progressDialog.dismiss();
+
+
+                    }
+                }).start();
+
 
                 String s_user = user.getText().toString();
                 String s_pass = pass.getText().toString();
@@ -144,8 +166,11 @@ public class LoginFragment extends Fragment {
                 } catch (ParseException e) {
                     e.printStackTrace();
                 }
+
                 //Implementar segun estado de la fecha --> si hacer tarea asincrona o no...
                 Autenticacion aut = new Autenticacion();
+
+
                 try {
                     //Almaceno los parámetros en un objeto de la clase autentication
                     //final PersonalData a = new PersonalData(mAutentica.getUser(), mAutentica.getPass());
@@ -195,6 +220,7 @@ public class LoginFragment extends Fragment {
     //Clase donde comprobamos que la autenticación ha sido correcta, y que existen parametros.
     public class TareaAutentica extends AsyncTask<ConnectionUserData, Void, String> {
 
+
         private ConnectionUserData data;
 
         protected String doInBackground(ConnectionUserData... params) {
@@ -226,6 +252,7 @@ public class LoginFragment extends Fragment {
                 nueva.putExtra("param_ip", data.getConnectionIP());
                 nueva.putExtra("param_port", data.getConnectionPort());
                 startActivity(nueva);
+
             }else
             {
                 Toast.makeText(getContext(), getString(R.string.error_login) +" "+data.getUser(),Toast.LENGTH_LONG).show();
