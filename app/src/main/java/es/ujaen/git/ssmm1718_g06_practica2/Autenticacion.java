@@ -1,5 +1,6 @@
 package es.ujaen.git.ssmm1718_g06_practica2;
 
+import android.app.ProgressDialog;
 import android.os.AsyncTask;
 
 import java.io.BufferedReader;
@@ -15,9 +16,9 @@ import java.net.URL;
 
 public class Autenticacion extends AsyncTask<ConnectionUserData,Void,Sesion> {
 
-
     @Override
     protected void onPreExecute() {
+
         Autenticacion datos=null;
         super.onPreExecute();
     }
@@ -87,4 +88,5 @@ public class Autenticacion extends AsyncTask<ConnectionUserData,Void,Sesion> {
 
         return sesion;
     }
+
 }
