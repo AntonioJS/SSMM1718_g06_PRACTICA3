@@ -104,7 +104,7 @@ public class LoginFragment extends Fragment {
             @Override
             public void onClick(View v) {
 
-                progressDialog = new ProgressDialog(getContext());
+              progressDialog = new ProgressDialog(getContext());
                 progressDialog.setMessage("Cargando..."); // Setting Message
                 progressDialog.setTitle("Esperando termine respuesta"); // Setting Title
                 progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER); // Progress Dialog Style Spinner
@@ -171,11 +171,11 @@ public class LoginFragment extends Fragment {
                 Autenticacion aut = new Autenticacion();
 
 
-                try {
-                    //Almaceno los parámetros en un objeto de la clase autentication
-                    //final PersonalData a = new PersonalData(mAutentica.getUser(), mAutentica.getPass());
-                    //Método para iniciar la tarea asíncrona con el objeto de la clase Autentication, devolviendo objeto de la clase sesion
+                try {                   //Almaceno los parámetros en un objeto de la clase autentication
+                    //Método para iniciar la tarea asíncrona con el objeto de la clase autenticacion, devolviendo objeto de la clase sesion
+
                     sesion = aut.execute(data).get();
+
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 } catch (ExecutionException e) {
@@ -199,15 +199,6 @@ public class LoginFragment extends Fragment {
 
                 Toast.makeText(getContext(), getString(R.string.welcome_login)+" " + s_user + " " + s_pass + " " + s_ip + " " + s_port, Toast.LENGTH_LONG).show();
 
-
-                /*
-                Intent nueva=new Intent(getActivity(),ServiceActivity.class);
-                nueva.putExtra(ServiceActivity.PARAM_USER,data.getUser());
-                nueva.putExtra("param pass",data.getPass());
-                nueva.putExtra("param ip",data.getConnectionIP());
-                nueva.putExtra("param port",data.getConnectionPort());
-                startActivity(nueva);
-                */
 
                 TareaAutentica tarea= new TareaAutentica();
                 tarea.execute(data);
