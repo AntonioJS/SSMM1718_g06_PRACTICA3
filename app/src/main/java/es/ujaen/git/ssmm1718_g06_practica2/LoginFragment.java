@@ -141,31 +141,7 @@ public class LoginFragment extends Fragment {
                 //Creamos el objeto con su constructor para rellenarlo.
 
                 final ConnectionUserData data = new ConnectionUserData(s_user, s_pass, s_ip, port2);
-                boolean estadoAuten=false;
-                try {
-                    SimpleDateFormat formato = new SimpleDateFormat("yyyy-MM-dd-HH-mm-ss");
 
-                    Date fechaExp = formato.parse(sesion.getmExpires());
-
-
-                    Calendar c = Calendar.getInstance();
-                    //System.out.println("Current time => " + c.getTime());
-
-                    SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd-HH-mm-ss");
-                    String formateadaFechaActual = df.format(c.getTime());
-
-
-                    Date fechaActual = formato.parse(formateadaFechaActual);
-
-                    if(fechaExp.compareTo(fechaActual)<0){
-
-                        System.out.println("Fecha actual mayor que fechaEXPIRACION");
-                    estadoAuten=true;
-                    }
-
-                } catch (ParseException e) {
-                    e.printStackTrace();
-                }
 
                 //Implementar segun estado de la fecha --> si hacer tarea asincrona o no...
                 Autenticacion aut = new Autenticacion();
@@ -182,15 +158,7 @@ public class LoginFragment extends Fragment {
                     e.printStackTrace();
                 }
 
-                //Llamo al método para establecer preferencias compartidas
-                SharedPreferences settings = getActivity().getSharedPreferences("sesion", 0);
-                SharedPreferences.Editor editor = settings.edit();
-                //Almaceno en el editor el identificador de sesion y la fecha en la que expira
-                editor.putString("SESION-ID", sesion.getmSessionId());
-                editor.putString("EXPIRES", sesion.getmExpires());
-                //Almaceno las preferencias compartidas
-                //editor.commit();
-                editor.apply();
+
 
                 //Comprobar por consola/Android Monitor sin depurar...(println-->Equivalente a un Log.i())
                 System.out.println("SESION-ID: " + sesion.getmSessionId());
@@ -243,6 +211,51 @@ public class LoginFragment extends Fragment {
                 nueva.putExtra("param_ip", data.getConnectionIP());
                 nueva.putExtra("param_port", data.getConnectionPort());
                 startActivity(nueva);
+                boolean estadoAuten=false;
+
+                //Llamo al método para establecer preferencias compartidas
+                SharedPreferences settings = getActivity().getSharedPreferences("sesion", 0);
+                SharedPreferences.Editor editor = settings.edit();
+                //Almaceno en el editor el identificador de sesion y la fecha en la que expira
+                editor.putString("SESION-ID", sesion.getmSessionId());
+                editor.putString("EXPIRES", sesion.getmExpires());
+                //Almaceno las preferencias compartidas
+                //editor.commit();
+                editor.apply();
+
+
+                try {
+
+                    SimpleDateFormat formato = new SimpleDateFormat("yyyy-MM-dd-HH-mm-ss");
+
+                    //Date fechaExp = formato.parse(sesion.getmExpires());
+                    String FechaExp = settings.getString("EXPIRES","0");
+                    Date fechaExp = formato.parse(FechaExp);
+
+                    Calendar c = Calendar.getInstance();
+                    //System.out.println("Current time => " + c.getTime());
+
+                    String formateadaFechaActual = formato.format(c.getTime());
+                    Date fechaActual = formato.parse(formateadaFechaActual);
+                    fechaActual=new Date("2017-12-20-14-00-00");
+                    if(fechaExp.compareTo(fechaActual)<0){
+
+                        System.out.println("Fecha actual mayor que fechaEXPIRACION");
+                        estadoAuten=true;
+                    }
+                    else if(estadoAuten==true){
+                        editor.clear();
+
+                        //startActivity(new Intent(getActivity(),LoginFragment.class));
+                        //LLAMADA AL LOGIN
+                        TareaAutentica tarea= new TareaAutentica();
+                        tarea.execute(data);
+                    }
+
+
+                } catch (ParseException e) {
+                    e.printStackTrace();
+                }
 
             }else
             {
