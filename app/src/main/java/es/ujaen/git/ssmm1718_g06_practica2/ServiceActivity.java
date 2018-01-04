@@ -24,7 +24,9 @@ public class ServiceActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_service);
 
-        String user=getIntent().getStringExtra(PARAM_USER);
+        //getSharedPreferences("sesion",0).getString("param_user","usuario");
+        //String user=getIntent().getStringExtra(PARAM_USER);
+        String user=getSharedPreferences("sesion",0).getString("param_user","usuario");
         String pass=getIntent().getStringExtra(PARAM_PASS);
         String ip=getIntent().getStringExtra(PARAM_IP);
         short port=getIntent().getShortExtra(PARAM_PORT,(short)6000);

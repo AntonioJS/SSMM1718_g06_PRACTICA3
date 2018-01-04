@@ -2,6 +2,7 @@ package es.ujaen.git.ssmm1718_g06_practica2;
 
 
 import android.app.ProgressDialog;
+import android.app.Service;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
@@ -98,8 +99,8 @@ public class LoginFragment extends Fragment {
         Button connect = (Button) fragment.findViewById(R.id.button_login);
         final EditText user = (EditText) fragment.findViewById(R.id.editText_login_user);
         final EditText pass = (EditText) fragment.findViewById(R.id.editText2_login_password);
-        final EditText ip = (EditText) fragment.findViewById(R.id.editText_login_direccion);
-        final EditText port = (EditText) fragment.findViewById(R.id.editText_login_puerto);
+        // final EditText ip = (EditText) fragment.findViewById(R.id.editText_login_direccion);
+        //final EditText port = (EditText) fragment.findViewById(R.id.editText_login_puerto);
         connect.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -114,7 +115,7 @@ public class LoginFragment extends Fragment {
                 new Thread(new Runnable() {
                     public void run() {
                         try {
-                            Thread.sleep(10000);
+                            Thread.sleep(1000);
                         } catch (Exception e) {
                             e.printStackTrace();
                         }
@@ -127,55 +128,33 @@ public class LoginFragment extends Fragment {
 
                 String s_user = user.getText().toString();
                 String s_pass = pass.getText().toString();
-                String s_ip = ip.getText().toString();
-                String s_port = port.getText().toString();
+                //  String s_ip = ip.getText().toString();
+                // String s_port = port.getText().toString();
 
 
                 short port2 = 0;
                 try {
-                    port2 = Short.parseShort(s_port);
+                    //  port2 = Short.parseShort(s_port);
                 } catch (java.lang.NumberFormatException ex) {
                     port2 = 6000;
 
                 }
                 //Creamos el objeto con su constructor para rellenarlo.
 
-                final ConnectionUserData data = new ConnectionUserData(s_user, s_pass, s_ip, port2);
-                boolean estadoAuten=false;
-                try {
-                    SimpleDateFormat formato = new SimpleDateFormat("yyyy-MM-dd-HH-mm-ss");
-
-                    Date fechaExp = formato.parse(sesion.getmExpires());
+                final ConnectionUserData data = new ConnectionUserData(s_user, s_pass,port2);
 
 
-                    Calendar c = Calendar.getInstance();
-                    //System.out.println("Current time => " + c.getTime());
-
-                    SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd-HH-mm-ss");
-                    String formateadaFechaActual = df.format(c.getTime());
-
-
-                    Date fechaActual = formato.parse(formateadaFechaActual);
-
-                    if(fechaExp.compareTo(fechaActual)<0){
-
-                        System.out.println("Fecha actual mayor que fechaEXPIRACION");
-                    estadoAuten=true;
-                    }
-
-                } catch (ParseException e) {
-                    e.printStackTrace();
-                }
-
-                //Implementar segun estado de la fecha --> si hacer tarea asincrona o no...
+                //Implementar segun estado si hacer tarea asincrona o no...
+                if(data.getPass().equals("12345") && data.getUser().equals("user1") || data.getUser().equals("user2")|| data.getUser().equals("user3")){
                 Autenticacion aut = new Autenticacion();
 
 
                 try {
                     //Almaceno los parámetros en un objeto de la clase autentication
-                    //final PersonalData a = new PersonalData(mAutentica.getUser(), mAutentica.getPass());
-                    //Método para iniciar la tarea asíncrona con el objeto de la clase Autentication, devolviendo objeto de la clase sesion
+                    //Método para iniciar la tarea asíncrona con el objeto de la clase autenticacion, devolviendo objeto de la clase sesion
+
                     sesion = aut.execute(data).get();
+
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 } catch (ExecutionException e) {
@@ -184,24 +163,17 @@ public class LoginFragment extends Fragment {
 
 
 
+                //Comprobar por consola/Android Monitor sin depurar...(println-->Equivalente a un Log.i())
+                System.out.println("SESION-ID: " + sesion.getmSessionId());
+                System.out.println("EXPIRES: " + sesion.getmExpires());
 
 
+                Toast.makeText(getContext(), getString(R.string.welcome_login)+" " + s_user + " " + s_pass,Toast.LENGTH_LONG).show();
 
-                Toast.makeText(getContext(), getString(R.string.welcome_login)+" " + s_user + " " + s_pass + " " + s_ip + " " + s_port, Toast.LENGTH_LONG).show();
-
-
-                /*
-                Intent nueva=new Intent(getActivity(),ServiceActivity.class);
-                nueva.putExtra(ServiceActivity.PARAM_USER,data.getUser());
-                nueva.putExtra("param pass",data.getPass());
-                nueva.putExtra("param ip",data.getConnectionIP());
-                nueva.putExtra("param port",data.getConnectionPort());
-                startActivity(nueva);
-                */
 
                 TareaAutentica tarea= new TareaAutentica();
                 tarea.execute(data);
-            }
+            }else Toast.makeText(getContext(), "Usuario o contraseña incorrecto, vuelvalo a intentar", Toast.LENGTH_SHORT).show();}
         });
 
         return fragment;
@@ -241,21 +213,22 @@ public class LoginFragment extends Fragment {
                 nueva.putExtra("param_pass", data.getPass());
                 nueva.putExtra("param_ip", data.getConnectionIP());
                 nueva.putExtra("param_port", data.getConnectionPort());
+                //boolean estadoAuten=false;
+
                 //Llamo al método para establecer preferencias compartidas
                 SharedPreferences settings = getActivity().getSharedPreferences("sesion", 0);
                 SharedPreferences.Editor editor = settings.edit();
                 //Almaceno en el editor el identificador de sesion y la fecha en la que expira
                 editor.putString("SESION-ID", sesion.getmSessionId());
                 editor.putString("EXPIRES", sesion.getmExpires());
+                editor.putString(ServiceActivity.PARAM_USER,data.getUser());
                 //Almaceno las preferencias compartidas
                 //editor.commit();
                 editor.apply();
-
-                //Comprobar por consola/Android Monitor sin depurar...(println-->Equivalente a un Log.i())
-                System.out.println("SESION-ID: " + sesion.getmSessionId());
-                System.out.println("EXPIRES: " + sesion.getmExpires());
-
+                //TODO:Y ya podemos llamar a la nueva actividad al haber guardado las preferencias
                 startActivity(nueva);
+
+
 
             }else
             {

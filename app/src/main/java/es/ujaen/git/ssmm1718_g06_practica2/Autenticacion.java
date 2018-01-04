@@ -55,25 +55,28 @@ public class Autenticacion extends AsyncTask<ConnectionUserData,Void,Sesion> {
             //Clase para almacenar en buffer
             BufferedReader in = new BufferedReader(is);
 
-            //Inicio variables que voy a utilizar
+            //Inicio variables
             String inputline; //Línea de entrada
-            String [] linea = null; //Línea donde almaceno la entrada en cadenas, separadas por &
+            String [] linea = null ; //Línea donde almaceno la entrada en cadenas, separadas por &
             String [] sessionid =  null; //Id de sesion
             String [] expires = null; //Fecha en la que expira la sesion
 
             //Recibo respuesta HTTP...
             while ((inputline = in.readLine()) != null) {
                 //Donde encuentre &... me quedo con la linea/cadena
-                linea = inputline.split("&");
-            }
-            //Quitar cabecera de id sesion
-            sessionid = linea[0].split("SESION-ID=");
-            //Quitar cabecera de fecha
-            expires = linea[1].split("EXPIRES=");
+                if(inputline.startsWith("SESION-ID=")) {
+                    linea = inputline.split("&");
+                    //Quitar cabecera de id sesion
+                    sessionid = linea[0].split("SESION-ID=");
+                    //Quitar cabecera de fecha
+                    expires = linea[1].split("EXPIRES=");
 
-            //Set en la clase sesion
-            sesion.setmSessionId(sessionid[1]);
-            sesion.setmExpires(expires[1]);
+                    //Set en la clase sesion
+                    sesion.setmSessionId(sessionid[1]);
+                    sesion.setmExpires(expires[1]);
+                }
+            }
+
 
             //Cierre clase leer y escribir
             os.close();

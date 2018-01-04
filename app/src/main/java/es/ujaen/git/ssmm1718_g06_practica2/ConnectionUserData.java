@@ -13,9 +13,9 @@ public class ConnectionUserData extends PersonalData {
     protected short connectionPort=6000;
 
 
-    public ConnectionUserData(String user,String pass,String ip,short port){
+    public ConnectionUserData(String user,String pass,short port){
         super(user,pass);
-        this.connectionIP=ip;
+        //this.connectionIP=ip;
         this.connectionPort=port;
 
 
