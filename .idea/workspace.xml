@@ -9,24 +9,17 @@
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="No Filters" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="42841d32-4985-49a9-92cf-f4c0d0ea33a1" name="Default" comment="onPost Preferences">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SSMM1718_g06_PRACTICA2.iml" afterPath="" />
+    <list default="true" id="42841d32-4985-49a9-92cf-f4c0d0ea33a1" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/fileHashes.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/fileSnapshots.bin" afterPath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/fileSnapshots.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/taskArtifacts.bin" afterPath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/taskArtifacts.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/taskArtifacts.lock" afterPath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/taskArtifacts.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/tasks/_app_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.bin" afterPath="$PROJECT_DIR$/.gradle/3.3/tasks/_app_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/tasks/_app_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.lock" afterPath="$PROJECT_DIR$/.gradle/3.3/tasks/_app_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.lock" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/tasks/_app_compileDebugJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.lock" afterPath="$PROJECT_DIR$/.gradle/3.3/tasks/_app_compileDebugJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/app.iml" afterPath="$PROJECT_DIR$/app/app.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/es/ujaen/git/ssmm1718_g06_practica2/AnuncioBD.java" afterPath="$PROJECT_DIR$/app/src/main/java/es/ujaen/git/ssmm1718_g06_practica2/AnuncioBD.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/es/ujaen/git/ssmm1718_g06_practica2/Registro.java" afterPath="$PROJECT_DIR$/app/src/main/java/es/ujaen/git/ssmm1718_g06_practica2/Registro.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_registro.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_registro.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/values-en/strings.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values-en/strings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/values-es/strings.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values-es/strings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/dex-cache/cache.xml" afterPath="$PROJECT_DIR$/build/intermediates/dex-cache/cache.xml" />
     </list>
     <ignored path="SSMM1718_g06_PRACTICA2.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -85,11 +78,13 @@
       <file leaf-file-name="Registro.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/es/ujaen/git/ssmm1718_g06_practica2/Registro.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="212">
-              <caret line="30" column="21" selection-start-line="30" selection-start-column="21" selection-end-line="30" selection-end-column="21" />
+            <state relative-caret-position="-425">
+              <caret line="10" column="42" selection-start-line="10" selection-start-column="42" selection-end-line="10" selection-end-column="42" />
               <folding>
-                <element signature="e#1195#1592#0" expanded="true" />
-                <element signature="e#1591#1592#0" expanded="true" />
+                <element signature="e#867#2110#0" expanded="true" />
+                <element signature="e#1637#2082#0" expanded="true" />
+                <element signature="e#2081#2082#0" expanded="true" />
+                <element signature="e#2109#2110#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -1965,11 +1960,11 @@
         <option value="$PROJECT_DIR$/app/src/main/res/layout-land/activity_registro.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/es/ujaen/git/ssmm1718_g06_practica2/MainActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/es/ujaen/git/ssmm1718_g06_practica2/AnuncioBD.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/es/ujaen/git/ssmm1718_g06_practica2/Registro.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_registro.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/values-es/strings.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/values-en/strings.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/es/ujaen/git/ssmm1718_g06_practica2/Registro.java" />
       </list>
     </option>
   </component>
@@ -2492,7 +2487,14 @@
       <option name="project" value="LOCAL" />
       <updated>1513192377914</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Corrigiendo fallos de nombre y añadiendo hebra.">
+      <created>1515349348385</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1515349348385</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TodoView">
@@ -2552,7 +2554,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Solucionado error permiso INTERNET en el MANIFEST... que retrasó la práctica.&#10;Ahora hace conexión GET y guardamos datos en clases y separamos de la cadena de respuesta la session-id y fecha de expiración." />
     <MESSAGE value="onPost Preferences" />
-    <option name="LAST_COMMIT_MESSAGE" value="onPost Preferences" />
+    <MESSAGE value="Corrigiendo fallos de nombre y añadiendo hebra." />
+    <option name="LAST_COMMIT_MESSAGE" value="Corrigiendo fallos de nombre y añadiendo hebra." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -2817,11 +2820,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/es/ujaen/git/ssmm1718_g06_practica2/Registro.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="212">
-          <caret line="30" column="21" selection-start-line="30" selection-start-column="21" selection-end-line="30" selection-end-column="21" />
+        <state relative-caret-position="-425">
+          <caret line="10" column="42" selection-start-line="10" selection-start-column="42" selection-end-line="10" selection-end-column="42" />
           <folding>
-            <element signature="e#1195#1592#0" expanded="true" />
-            <element signature="e#1591#1592#0" expanded="true" />
+            <element signature="e#867#2110#0" expanded="true" />
+            <element signature="e#1637#2082#0" expanded="true" />
+            <element signature="e#2081#2082#0" expanded="true" />
+            <element signature="e#2109#2110#0" expanded="true" />
           </folding>
         </state>
       </provider>
