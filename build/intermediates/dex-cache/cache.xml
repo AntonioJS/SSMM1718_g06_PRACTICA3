@@ -3,21 +3,21 @@
 
     <item
         is-multidex="true"
-        jar="C:\Users\Salvador\AndroidStudioProjects\SSMM1718_g06_PRACTICA2\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jar="C:\Users\ajs00\Desktop\SSMM1718_g06_PRACTICA2\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.0"
-        sha1="749512a7a7688d3372466ca72493ed2983611c44">
-        <dex dex="C:\Users\Salvador\AndroidStudioProjects\SSMM1718_g06_PRACTICA2\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_c289a53ab331b4274c7f4a637a46ba1f9504558b\classes.dex" />
+        sha1="2353815aa79c45189f39cf85a342c69693dffc43">
+        <dex dex="C:\Users\ajs00\Desktop\SSMM1718_g06_PRACTICA2\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_4645794705f5cf3d980e937a78e92b3e1a7ff988\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\Salvador\AndroidStudioProjects\SSMM1718_g06_PRACTICA2\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jar="C:\Users\ajs00\Desktop\SSMM1718_g06_PRACTICA2\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.0"
         sha1="3be78ebc2706b2e1fe2f12d5726887a92d6c183b">
-        <dex dex="C:\Users\Salvador\AndroidStudioProjects\SSMM1718_g06_PRACTICA2\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_7ca17fbfb4d18f5e732657cf2f11034ea49b1a90\classes.dex" />
+        <dex dex="C:\Users\ajs00\Desktop\SSMM1718_g06_PRACTICA2\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_3e0ca0db0c74dbc52ad25f7f058c309466788afe\classes.dex" />
     </item>
 
 </items>

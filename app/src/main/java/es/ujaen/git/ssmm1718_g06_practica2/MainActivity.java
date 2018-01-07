@@ -6,6 +6,7 @@ import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -28,6 +29,12 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
+
+
+
+
 
         if (savedInstanceState != null) {
 
@@ -81,6 +88,8 @@ public class MainActivity extends AppCompatActivity {
         } catch (ParseException e) {
             e.printStackTrace();
         }
+
+
 
 
     }

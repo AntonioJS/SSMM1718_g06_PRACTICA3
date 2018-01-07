@@ -1,7 +1,9 @@
 package es.ujaen.git.ssmm1718_g06_practica2;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -15,6 +17,9 @@ public class ServiceActivity extends AppCompatActivity {
     public static final String PARAM_PASS="param_pass";
     public static final String PARAM_IP="param_ip";
     public static final String PARAM_PORT="param_port";
+
+    //Parte p3 definiendo que hace boton
+    TextView tv_registrar;
 
     java.net.InetSocketAddress InetSocketAddress;
     SocketAddress socket;
@@ -35,6 +40,17 @@ public class ServiceActivity extends AppCompatActivity {
 
         TextView title= (TextView) findViewById(R.id.txPerfil);
         title.setText(getString(R.string.welcome_login)+" "+user);
+
+        //parte p3 que el boton haga algo
+        tv_registrar= (TextView) findViewById(R.id.tv_registrar);
+        tv_registrar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //¿Qué queremos que ocurra?
+                Intent intentReg = new Intent (ServiceActivity.this, Registro.class);
+                ServiceActivity.this.startActivity(intentReg);
+            }
+        });
 
 
 
