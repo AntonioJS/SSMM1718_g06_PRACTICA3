@@ -8,7 +8,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 public class Registro extends AppCompatActivity {
-    //Declaramos los edittext para nuestro formulario.
+    //Declaramos los edittext para nuestro formulario de publicación de anuncio.
     EditText edtId,edtNombre,edtEmpresa,edtDescripcion;
     Button btnAgregar;
 

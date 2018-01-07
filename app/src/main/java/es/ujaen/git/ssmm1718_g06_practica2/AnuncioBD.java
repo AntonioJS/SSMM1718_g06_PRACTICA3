@@ -33,6 +33,7 @@ public class AnuncioBD extends SQLiteOpenHelper {
         SQLiteDatabase db = getWritableDatabase();
         if(db !=null){
             db.execSQL("INSERT INTO ANUNCIOS VALUES('"+id+"','"+nombre+"','"+empresa+"','"+descripcion+"')");
+            //Cerramos base de datos.
             db.close();
         }
     }

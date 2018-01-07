@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">SSMM1718_g06_PRACTICA2</string>
+    <string name="app_name">SSMM1718_g06_PRACTICA3</string>
     <string name="activity_service" translatable="false">Activity 3</string>
     <string name="fragment_login">Practice 2</string>
     <string name="fragment_login_button">Connect</string>
-    <string name="fragment_login_description">Mobiles Services</string>
+    <string name="fragment_login_description">Mobile Services</string>
     <string name="fragment_login_direccion">Address</string>
     <string name="fragment_login_password">Pass</string>
     <string name="fragment_login_puerto">Port</string>
