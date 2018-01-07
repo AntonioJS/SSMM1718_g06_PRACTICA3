@@ -17,6 +17,13 @@ public class Registro extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registro);
+//Asociamos con los elementos de nuestro formulario de publicación de anuncio.
+        edtId=(EditText)findViewById(R.id.edtID);
+        edtNombre=(EditText)findViewById(R.id.edtNombre);
+        edtEmpresa=(EditText)findViewById(R.id.edtEmpresa);
+        edtDescripcion=(EditText)findViewById(R.id.edtDescripcion);
+
+        btnAgregar=(Button)findViewById(R.id.btnAgregar);
 
 //Creamos un método para crear la nueva hebra de trabajo de la actividad.
         nuevaHebra();
@@ -30,15 +37,11 @@ public class Registro extends AppCompatActivity {
             @Override
             public void run() {
                 //Lugar dónde realizar el proceso.
-                edtId=(EditText)findViewById(R.id.edtID);
-                edtNombre=(EditText)findViewById(R.id.edtNombre);
-                edtEmpresa=(EditText)findViewById(R.id.edtEmpresa);
-                edtDescripcion=(EditText)findViewById(R.id.edtDescripcion);
-
-                btnAgregar=(Button)findViewById(R.id.btnAgregar);
 
                 //Ahora, creamos una instancia de nuestra clase creada anteriormente para así poder
                 //hacer uso de los métodos de esta clase y mantener nuestra BD.
+
+                //Creamos una instancia de la clase anuncioBD.
 
                 final AnuncioBD anuncioBD = new AnuncioBD(getApplicationContext());
 
@@ -46,7 +49,9 @@ public class Registro extends AppCompatActivity {
                     @Override
 
                     public void onClick(View view){
+                        //Llamamos a agregarAnuncio.
                         anuncioBD.agregarAnuncio(edtId.getText().toString(),edtNombre.getText().toString(),edtEmpresa.getText().toString(),edtDescripcion.getText().toString());
+                        //Verificación.
                         Toast.makeText(getApplicationContext(),"SE AGREGÓ CORRECTAMENTE",Toast.LENGTH_SHORT).show();
                     }
                 });
