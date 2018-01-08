@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -19,7 +21,7 @@ public class ServiceActivity extends AppCompatActivity {
     public static final String PARAM_PORT="param_port";
 
     //Parte p3 definiendo que hace boton
-    TextView tv_registrar;
+    Button btn_registrar;
 
     java.net.InetSocketAddress InetSocketAddress;
     SocketAddress socket;
@@ -42,8 +44,8 @@ public class ServiceActivity extends AppCompatActivity {
         title.setText(getString(R.string.welcome_login)+" "+user);
 
         //parte p3 que el boton haga algo
-        tv_registrar= (TextView) findViewById(R.id.tv_registrar);
-        tv_registrar.setOnClickListener(new View.OnClickListener() {
+        Button btn_registrar = (Button) findViewById(R.id.botonnuevoanuncio);
+        btn_registrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 //¿Qué queremos que ocurra?

@@ -187,7 +187,7 @@
         android:gravity="center"
         android:textStyle="bold"
         android:textColor="#000000"
-        android:text="Diseño servicio del ejercicio 1 sin implementar"
+        android:text="Diseño servicio del ejercicio 1."
         />
 
     <TextView
