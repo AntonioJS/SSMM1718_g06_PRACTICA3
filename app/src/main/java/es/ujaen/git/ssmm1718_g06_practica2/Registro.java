@@ -26,13 +26,23 @@ public class Registro extends AppCompatActivity {
         btnAgregar=(Button)findViewById(R.id.btnAgregar);
 
 //Creamos un método para crear la nueva hebra de trabajo de la actividad.
-        nuevaHebra();
+        btnAgregar.setOnClickListener(new View.OnClickListener() {
+            @Override
+
+            public void onClick(View view){
+
+                nuevaHebra();
+            }
+        });
+       // nuevaHebra();
 
     }
 
     private void nuevaHebra() {
         //Creamos una instancia de la clase Thread junto a un objeto Runnable.
-
+        final String p1=edtId.getText().toString();
+        final String p2="",p3="",p4="";
+        //,edtNombre.getText().toString(),edtEmpresa.getText().toString(),edtDescripcion.getText().toString()
         new Thread(new Runnable() {
             @Override
             public void run() {
@@ -45,17 +55,17 @@ public class Registro extends AppCompatActivity {
 
                 final AnuncioBD anuncioBD = new AnuncioBD(getApplicationContext());
 
-                btnAgregar.setOnClickListener(new View.OnClickListener() {
+                //Llamamos a agregarAnuncio.
+                anuncioBD.agregarAnuncio(p1,p2,p3,p4);
+                //Verificación.
+                runOnUiThread(new Runnable() {
                     @Override
-
-                    public void onClick(View view){
-                        //Llamamos a agregarAnuncio.
-                        anuncioBD.agregarAnuncio(edtId.getText().toString(),edtNombre.getText().toString(),edtEmpresa.getText().toString(),edtDescripcion.getText().toString());
-                        //Verificación.
+                    public void run() {
                         Toast.makeText(getApplicationContext(),"SE AGREGÓ CORRECTAMENTE",Toast.LENGTH_SHORT).show();
+
                     }
                 });
-
+                anuncioBD.close();
 
             }
         }).start();
