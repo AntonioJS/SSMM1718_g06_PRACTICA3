@@ -16,7 +16,9 @@
             android:id="@+id/textView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Publicar anuncios" />
+            android:gravity="center"
+            android:text="Publicar anuncios"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
 
         <TextView
             android:id="@+id/textView2"

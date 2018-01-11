@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">SSMM1718_g06_PRACTICA3</string>
+    <string name="app_name">SSMM1718_g06_PRACTICA</string>
     <string name="activity_service" translatable="false">Actividad 3</string>
     <string name="fragment_login">Práctica 2</string>
     <string name="fragment_login_button">Conectar</string>
