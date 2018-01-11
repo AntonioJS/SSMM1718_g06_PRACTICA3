@@ -107,12 +107,14 @@ public class Registro extends AppCompatActivity {
     }
 
     private void nuevaHebra() {
-        //Creamos una instancia de la clase Thread junto a un objeto Runnable.
+        //String del anuncio.
         final String id=edtId.getText().toString();
         final String nombre=edtNombre.getText().toString();
         final String empresa=edtEmpresa.getText().toString();
         final String descripcion=edtDescripcion.getText().toString();
         //,edtNombre.getText().toString(),edtEmpresa.getText().toString(),edtDescripcion.getText().toString()
+
+        //Creamos una instancia de la clase Thread junto a un objeto Runnable.
         new Thread(new Runnable() {
             @Override
             public void run() {
@@ -140,6 +142,7 @@ public class Registro extends AppCompatActivity {
             }
         }).start();
     }
+
 
 
 }
